@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Flower Classification System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #E6E6FA;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-weight: 600;
+            color: #4B0082;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
+        p {
+            font-weight: 300;
+            font-size: 1.1em;
+            max-width: 700px;
+            margin: 10px auto;
+            color: #555;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin: 30px auto;
+            gap: 20px;
+        }
+
+        .form-container {
+            flex: 1;
+            padding: 20px;
+            background-color: #f9f9ff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        form b {
+            font-weight: 400;
+            color: #333;
+        }
+
+        form input[type="text"] {
+            padding: 8px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+
+        form input[type="submit"] {
+            background-color: #4B0082;
+            color: #fff;
+            font-weight: 500;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #6a0dad;
+        }
+
+        .image-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        small {
+            display: block;
+            color: #888;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <center>
+        <h1>IRIS FLOWER CLASSIFICATION SYSTEM</h1>
+        <p>Welcome to our interactive platform for identifying and classifying different iris flower species. Kindly provide the measurements of the flower you want to classify!</p>
+    </center>
+
+    <div class="container">
+        <div class="form-container">
+            <form method="POST" action="{{url_for('home')}}">
+                <b>
+                    Sepal Length (cm): 
+                    <input type="text" name="a" placeholder="Example: 5.1">
+
+                    Sepal Width (cm): 
+                    <input type="text" name="b" placeholder="Example: 3.5">
+
+                    Petal Length (cm): 
+                    <input type="text" name="c" placeholder="Example: 1.4">
+
+                    Petal Width (cm): 
+                    <input type="text" name="d" placeholder="Example: 0.2">
+                </b>
+                <br><br>
+                <input type="submit" value="Predict Flower Species!">
+            </form>
+        </div>
+
+        <div class="image-container">
+            <img src="static/flower2.jpg" alt="Iris flower">
+        </div>
+    </div>
+
+    <center>
+        <p>Understanding these measurements will help you make accurate predictions about the species of Iris flower.</p>
+    </center>
+
+</body>
+</html>
